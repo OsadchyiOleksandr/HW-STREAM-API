@@ -8,17 +8,16 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductController {
+    ProductView productView = new ProductView();
+    ProductModel productModel = new ProductModel();
+
     public void runApp() {
-        ProductModel productModel = new ProductModel();
         List<Product> products = productModel.getProductBase();
         Map<String, Double> averagePricesByCategory = productModel.calculateAveragePricesByCategory(products);
-        ProductView.messageToDisplay("Cередня ціну продуктів в кожній категорії: ");
-        ProductView.mapToDisplay(averagePricesByCategory);
-        ProductView.messageToDisplay("-------------------------------------------");
+        productView.messageToDisplay("Cередня ціну продуктів в кожній категорії: ");
+        productView.mapToDisplay(averagePricesByCategory);
+        productView.messageToDisplay("-------------------------------------------");
         String categoryWithHighestAvgPrice = productModel.calculateCategoryWithHighestAvgPrice(products);
-        ProductView.messageToDisplay("\nКатегорія з найвищою середньою ціною: ");
-        ProductView.messageToDisplay(categoryWithHighestAvgPrice);
+        productView.messageToDisplay("\nКатегорія з найвищою середньою ціною: " + categoryWithHighestAvgPrice);
     }
-
-
 }

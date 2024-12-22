@@ -4,11 +4,11 @@ import java.util.Map;
 
 public class ProductView {
 
-    public static void messageToDisplay(String message){
+    public void messageToDisplay(String message){
         System.out.println(message);
     }
 
-    public static <K, V> void mapToDisplay(Map<K, V> map){
+    public <K, V> void mapToDisplay(Map<K, V> map){
         for (Map.Entry<K, V> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }

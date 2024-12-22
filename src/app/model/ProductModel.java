@@ -17,11 +17,10 @@ public class ProductModel {
     );
 
     public Map<String, Double> calculateAveragePricesByCategory(List<Product> products){
-        Map<String, Double> averagePricesByCategory = products.stream()
+        return products.stream()
                 .collect(Collectors.groupingBy(
                         Product::getCategory,
                         Collectors.averagingDouble(Product::getPrice)));
-        return averagePricesByCategory;
     }
 
     public String calculateCategoryWithHighestAvgPrice(List<Product> products){
