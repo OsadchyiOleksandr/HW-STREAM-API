@@ -2,7 +2,7 @@ package app.view;
 
 import java.util.Map;
 
-public class Show {
+public class ProductView {
 
     public static void messageToDisplay(String message){
         System.out.println(message);
